@@ -12,7 +12,7 @@ Before Downloading all the free Dbots, Follow these steps to get started:
 
 <b><a href="https://dboty.com/Deriv-github">Navigate to the Dbot AI auto-trading area</a></b>
 
-Download all of our bots here
+<a href="[https://dboty.com/Deriv-github](https://github.com/DerivBots/Free-Dbots/archive/refs/heads/main.zip)">Download all of our bots here</a>
 
 Upload the bot you want to use in Dbot
 
