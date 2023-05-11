@@ -1,4 +1,4 @@
-# Why Dobts?
+# Why Dbots?
 All the bots are specifically designed to work on Deriv's DBot platform with AI technology, which you can access by <b><a href="https://dboty.com/Deriv-github">creating an account</a></b> or <b><a href="https://dboty.com/Deriv-github">by becoming a partner</a></b>. Remember, "Game theory rules everything. Come to the game."
 
 Check the video on how auto-trading Dbot works: https://streamable.com/g27yns
