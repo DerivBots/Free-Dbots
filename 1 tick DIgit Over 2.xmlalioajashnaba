@@ -62,7 +62,7 @@
         <field name="CURRENCY_LIST">USD</field>
         <value name="DURATION">
           <block type="math_number" id="lMu!1pNuV]HE6{eqg5)]">
-            <field name="NUM">1</field>
+            <field name="NUM"></field>
           </block>
         </value>
         <value name="AMOUNT">
@@ -72,7 +72,7 @@
         </value>
         <value name="PREDICTION">
           <block type="math_number" id="8K4[VV]lz|.pX`REeUkQ">
-            <field name="NUM">2</field>
+            <field name="NUM"></field>
           </block>
         </value>
       </block>
@@ -215,10 +215,10 @@
                         <field name="OP">ABS</field>
                         <value name="NUM">
                           <shadow type="math_number" id="GleSn`9j7Cm7/dqg}FIA">
-                            <field name="NUM">9</field>
+                            <field name="NUM"></field>
                           </shadow>
                           <block type="read_details" id="!HRa4DpGxF1wf|sse.Uo">
-                            <field name="DETAIL_INDEX">4</field>
+                            <field name="DETAIL_INDEX"></field>
                           </block>
                         </value>
                       </block>
@@ -242,7 +242,7 @@
                             <field name="OP">ABS</field>
                             <value name="NUM">
                               <shadow type="math_number" id="GleSn`9j7Cm7/dqg}FIA">
-                                <field name="NUM">9</field>
+                                <field name="NUM"></field>
                               </shadow>
                               <block type="read_details" id="}o~uHLGH(]1UB|T/{ra_">
                                 <field name="DETAIL_INDEX">4</field>
@@ -252,10 +252,10 @@
                         </value>
                         <value name="B">
                           <shadow type="math_number" id="{JXdZCp2%s=sfO@yN:n}">
-                            <field name="NUM">1</field>
+                            <field name="NUM"></field>
                           </shadow>
                           <block type="math_number" id="-6oW(!#X;!a9,r%?hZ#:">
-                            <field name="NUM">2.5</field>
+                            <field name="NUM"></field>
                           </block>
                         </value>
                       </block>
@@ -270,7 +270,7 @@
                                 <field name="OP">ABS</field>
                                 <value name="NUM">
                                   <shadow type="math_number" id="ft^DVzOH^GlSjzUC}@3c">
-                                    <field name="NUM">9</field>
+                                    <field name="NUM"></field>
                                   </shadow>
                                   <block type="read_details" id=":c1$EI5p{7G|{o3u/rs*">
                                     <field name="DETAIL_INDEX">4</field>
