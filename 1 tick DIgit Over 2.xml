@@ -21,7 +21,7 @@
         <field name="VAR" id="ITiw_xSBxuYP6qNF)F|h" variabletype="">Max Loss Amount</field>
         <value name="VALUE">
           <block type="math_number" id="e)@|uPb0;SOGU{4/{E~y">
-            <field name="NUM">125</field>
+            <field name="NUM">120</field>
           </block>
         </value>
         <next>
@@ -29,7 +29,7 @@
             <field name="VAR" id="oQ~TQa?Dq78]MM},5;*l" variabletype="">Expected Profit</field>
             <value name="VALUE">
               <block type="math_number" id="P`GU9_$21iwK`fUi|+vb">
-                <field name="NUM">35</field>
+                <field name="NUM">100</field>
               </block>
             </value>
             <next>
@@ -215,10 +215,10 @@
                         <field name="OP">ABS</field>
                         <value name="NUM">
                           <shadow type="math_number" id="GleSn`9j7Cm7/dqg}FIA">
-                            <field name="NUM">9</field>
+                            <field name="NUM"></field>
                           </shadow>
                           <block type="read_details" id="!HRa4DpGxF1wf|sse.Uo">
-                            <field name="DETAIL_INDEX">4</field>
+                            <field name="DETAIL_INDEX">0</field>
                           </block>
                         </value>
                       </block>
@@ -230,7 +230,7 @@
                     <field name="VAR" id="gsQah}04l(VNTYJ`*;{Y" variabletype="">Initial Amount</field>
                     <value name="DELTA">
                       <shadow type="math_number" id="N=Vo^MVz~/^(xt7Ag@8E">
-                        <field name="NUM">1</field>
+                        <field name="NUM">0</field>
                       </shadow>
                       <block type="math_arithmetic" id="($]fwrkn18L7Cx/kcJUV">
                         <field name="OP">MULTIPLY</field>
@@ -242,10 +242,10 @@
                             <field name="OP">ABS</field>
                             <value name="NUM">
                               <shadow type="math_number" id="GleSn`9j7Cm7/dqg}FIA">
-                                <field name="NUM">9</field>
+                                <field name="NUM">0</field>
                               </shadow>
                               <block type="read_details" id="}o~uHLGH(]1UB|T/{ra_">
-                                <field name="DETAIL_INDEX">4</field>
+                                <field name="DETAIL_INDEX">0</field>
                               </block>
                             </value>
                           </block>
