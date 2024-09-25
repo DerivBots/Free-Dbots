@@ -2,18 +2,18 @@
   <variables>
     <variable type="" id="ITiw_xSBxuYP6qNF)F|h">Max Loss Amount</variable>
     <variable type="" id="oQ~TQa?Dq78]MM},5;*l">Expected Profit</variable>
-    <variable type="" id="gsQah}04l(VNTYJ`*;{Y">Initial Amount</variable>
+    <variable type="" id="gsQah}02l(VNTYJ`*;{Y">Initial Amount</variable>
     <variable type="" id="KaO9g@ULafq66uv?o*cA">Win Amount</variable>
     <variable type="" id="j4S-npH54+xL{.HbzV3c">Next Trade Condition</variable>
   </variables>
-  <block type="trade" id="trade" x="-229" y="-91">
+  <block type="trade" id="trade" x="-200" y="-100">
     <field name="MARKET_LIST">volidx</field>
     <field name="SUBMARKET_LIST">random_index</field>
     <field name="SYMBOL_LIST">R_50</field>
     <field name="TRADETYPECAT_LIST">digits</field>
     <field name="TRADETYPE_LIST">overunder</field>
     <field name="TYPE_LIST">both</field>
-    <field name="CANDLEINTERVAL_LIST">60</field>
+    <field name="CANDLEINTERVAL_LIST">50</field>
     <field name="TIME_MACHINE_ENABLED">FALSE</field>
     <field name="RESTARTONERROR">TRUE</field>
     <statement name="INITIALIZATION">
@@ -21,7 +21,7 @@
         <field name="VAR" id="ITiw_xSBxuYP6qNF)F|h" variabletype="">Max Loss Amount</field>
         <value name="VALUE">
           <block type="math_number" id="e)@|uPb0;SOGU{4/{E~y">
-            <field name="NUM">125</field>
+            <field name="NUM">150</field>
           </block>
         </value>
         <next>
@@ -29,7 +29,7 @@
             <field name="VAR" id="oQ~TQa?Dq78]MM},5;*l" variabletype="">Expected Profit</field>
             <value name="VALUE">
               <block type="math_number" id="P`GU9_$21iwK`fUi|+vb">
-                <field name="NUM">35</field>
+                <field name="NUM">0</field>
               </block>
             </value>
             <next>
@@ -37,7 +37,7 @@
                 <field name="VAR" id="KaO9g@ULafq66uv?o*cA" variabletype="">Win Amount</field>
                 <value name="VALUE">
                   <block type="math_number" id="U(A|/.):^}Xem$3N6yVE">
-                    <field name="NUM">0.35</field>
+                    <field name="NUM">0</field>
                   </block>
                 </value>
                 <next>
@@ -45,7 +45,7 @@
                     <field name="VAR" id="gsQah}04l(VNTYJ`*;{Y" variabletype="">Initial Amount</field>
                     <value name="VALUE">
                       <block type="math_number" id="QqQ.fEpxzaqGC1Ub[TSh">
-                        <field name="NUM">0.35</field>
+                        <field name="NUM">0</field>
                       </block>
                     </value>
                   </block>
@@ -255,7 +255,7 @@
                             <field name="NUM">1</field>
                           </shadow>
                           <block type="math_number" id="-6oW(!#X;!a9,r%?hZ#:">
-                            <field name="NUM">2.5</field>
+                            <field name="NUM">2</field>
                           </block>
                         </value>
                       </block>
