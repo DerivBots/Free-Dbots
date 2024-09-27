@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xml xmlns="https://developers.google.com/blockly/xml" is_dbot="true" collection="false">
-<xml xmlns="https://developers.google.com/blockly/xml" is_dbot="true" collection="false">
-<xml xmlns="https://developers.google.com/blockly/xml" is_dbot="true" collection="false">
   <variables>
     <variable id="]oGV^TW+pyAyI~)S*^8n">Max Loss Amount</variable>
     <variable id="9x[vEnPzcs4#B%.$sHT+">ema</variable>
@@ -22,6 +20,7 @@
     <variable id="volatility_threshold">Volatility Threshold</variable> <!-- New variable for dynamic threshold -->
     <variable id="trade_start_time">Trade Start Time</variable> <!-- New variable for managing trade time -->
   </variables>
+
   <!-- Main trading logic definition -->
   <block type="trade_definition" id="vLLt0bmiS,qfJa7cOlQM" deletable="false" x="0" y="60">
     <statement name="TRADE_OPTIONS">
@@ -57,6 +56,7 @@
         </next>
       </block>
     </statement>
+
     <statement name="INITIALIZATION">
       <block type="variables_set" id="5H}7~jXdMd1PaV-J-wF$">
         <field name="VAR" id="]oGV^TW+pyAyI~)S*^8n">Max Loss Amount</field>
@@ -87,9 +87,11 @@
         </next>
       </block>
     </statement>
+
     <!-- Purchase logic with Volatility Filter -->
     <block type="before_purchase" id="^quULY}e);LBrbLXNPym" deletable="false" x="0" y="832">
       <statement name="BEFOREPURCHASE_STACK">
+
         <!-- ATR Calculation -->
         <block type="atr_statement" id="calculateATR">
           <value name="PERIOD">
@@ -108,6 +110,7 @@
             </block>
           </next>
         </block>
+
         <!-- Error Handling: Check if ATR is valid -->
         <block type="controls_if" id="checkATRValidity">
           <value name="IF0">
@@ -142,6 +145,7 @@
             </next>
           </statement>
         </block>
+
         <!-- Volatility Filter -->
         <block type="controls_if" id="checkVolatility">
           <value name="IF0">
@@ -176,6 +180,7 @@
             </next>
           </statement>
         </block>
+
         <!-- Consecutive Loss Limit -->
         <block type="controls_if" id="checkConsecutiveLosses">
           <value name="IF0">
@@ -210,6 +215,7 @@
             </next>
           </statement>
         </block>
+
         <!-- Trade Time Management: Example logic to restrict trading hours -->
         <block type="controls_if" id="checkTradeTime">
           <value name="IF0">
@@ -244,6 +250,7 @@
             </next>
           </statement>
         </block>
+
         <!-- Logging: You can add functionality here to log trade details -->
         <block type="text_print" id="logTradeDetails">
           <value name="TEXT">
@@ -252,8 +259,10 @@
             </shadow>
           </value>
         </block>
+
       </statement>
     </block>
+
     <!-- After Purchase Logic: Reset loss counter on win -->
     <block type="after_purchase" id="EqOhd*a;Ru2aCM=5uvE6" collapsed="true" x="751" y="60">
       <statement name="AFTERPURCHASE_STACK">
