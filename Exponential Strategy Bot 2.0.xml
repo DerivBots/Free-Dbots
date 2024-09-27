@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml xmlns="https://developers.google.com/blockly/xml" is_dbot="true" collection="false">
+<xml xmlns="https://developers.google.com/blockly/xml" is_dbot="true" collection="false">
 <xml xmlns="https://developers.google.com/blockly/xml" is_dbot="true" collection="false">
   <variables>
     <variable id="]oGV^TW+pyAyI~)S*^8n">Max Loss Amount</variable>
@@ -19,7 +22,6 @@
     <variable id="volatility_threshold">Volatility Threshold</variable> <!-- New variable for dynamic threshold -->
     <variable id="trade_start_time">Trade Start Time</variable> <!-- New variable for managing trade time -->
   </variables>
-
   <!-- Main trading logic definition -->
   <block type="trade_definition" id="vLLt0bmiS,qfJa7cOlQM" deletable="false" x="0" y="60">
     <statement name="TRADE_OPTIONS">
@@ -55,7 +57,6 @@
         </next>
       </block>
     </statement>
-
     <statement name="INITIALIZATION">
       <block type="variables_set" id="5H}7~jXdMd1PaV-J-wF$">
         <field name="VAR" id="]oGV^TW+pyAyI~)S*^8n">Max Loss Amount</field>
@@ -86,11 +87,9 @@
         </next>
       </block>
     </statement>
-
     <!-- Purchase logic with Volatility Filter -->
     <block type="before_purchase" id="^quULY}e);LBrbLXNPym" deletable="false" x="0" y="832">
       <statement name="BEFOREPURCHASE_STACK">
-
         <!-- ATR Calculation -->
         <block type="atr_statement" id="calculateATR">
           <value name="PERIOD">
@@ -109,7 +108,6 @@
             </block>
           </next>
         </block>
-
         <!-- Error Handling: Check if ATR is valid -->
         <block type="controls_if" id="checkATRValidity">
           <value name="IF0">
@@ -144,7 +142,6 @@
             </next>
           </statement>
         </block>
-
         <!-- Volatility Filter -->
         <block type="controls_if" id="checkVolatility">
           <value name="IF0">
@@ -156,4 +153,139 @@
                 </block>
               </value>
               <value name="B">
-                <block type="variables_get
+                <block type="variables_get">
+                  <field name="VAR" id="volatility_threshold">Volatility Threshold</field> <!-- Use the threshold variable -->
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="notify" id="volatilityAlert">
+              <field name="NOTIFICATION_TYPE">warn</field>
+              <field name="NOTIFICATION_SOUND">silent</field>
+              <value name="MESSAGE">
+                <block type="text">
+                  <field name="TEXT">High volatility detected. Stopping trade.</field>
+                </block>
+              </value>
+            </block>
+            <next>
+              <block type="trade_stop" id="stopBotOnVolatility">
+                <!-- Stops the bot when high volatility is detected -->
+              </block>
+            </next>
+          </statement>
+        </block>
+        <!-- Consecutive Loss Limit -->
+        <block type="controls_if" id="checkConsecutiveLosses">
+          <value name="IF0">
+            <block type="logic_compare" id="compareLosses">
+              <field name="OP">GTE</field> <!-- Greater than or equal to -->
+              <value name="A">
+                <block type="variables_get">
+                  <field name="VAR" id="loss_counter">Loss Counter</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number">
+                  <field name="NUM">2</field> <!-- Set to 2 for max consecutive losses -->
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="notify" id="consecutiveLossAlert">
+              <field name="NOTIFICATION_TYPE">warn</field>
+              <field name="NOTIFICATION_SOUND">silent</field>
+              <value name="MESSAGE">
+                <block type="text">
+                  <field name="TEXT">Two consecutive losses. Stopping the bot.</field>
+                </block>
+              </value>
+            </block>
+            <next>
+              <block type="trade_stop" id="stopBotOnLossLimit">
+                <!-- Stops the bot after two consecutive losses -->
+              </block>
+            </next>
+          </statement>
+        </block>
+        <!-- Trade Time Management: Example logic to restrict trading hours -->
+        <block type="controls_if" id="checkTradeTime">
+          <value name="IF0">
+            <block type="logic_compare" id="compareTradeTime">
+              <field name="OP">LT</field>
+              <value name="A">
+                <block type="variables_get">
+                  <field name="VAR" id="trade_start_time">Trade Start Time</field> <!-- Placeholder for time -->
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number">
+                  <field name="NUM">9</field> <!-- Example: restrict before 9 AM -->
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="notify" id="tradeTimeAlert">
+              <field name="NOTIFICATION_TYPE">warn</field>
+              <field name="NOTIFICATION_SOUND">silent</field>
+              <value name="MESSAGE">
+                <block type="text">
+                  <field name="TEXT">Trading not allowed before 9 AM.</field>
+                </block>
+              </value>
+            </block>
+            <next>
+              <block type="trade_stop" id="stopBotOnTimeRestriction">
+                <!-- Stops the bot if trading is not allowed -->
+              </block>
+            </next>
+          </statement>
+        </block>
+        <!-- Logging: You can add functionality here to log trade details -->
+        <block type="text_print" id="logTradeDetails">
+          <value name="TEXT">
+            <shadow type="text">
+              <field name="TEXT">Trade executed. ATR: [ATR value], Losses: [Loss Counter]</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+    <!-- After Purchase Logic: Reset loss counter on win -->
+    <block type="after_purchase" id="EqOhd*a;Ru2aCM=5uvE6" collapsed="true" x="751" y="60">
+      <statement name="AFTERPURCHASE_STACK">
+        <block type="controls_if" id="checkWinLoss">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" else="1"></mutation>
+          <value name="IF0">
+            <block type="contract_check_result" id="contractCheckResult">
+              <field name="CHECK_RESULT">win</field>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="variables_set" id="resetLossCounterWin">
+              <field name="VAR" id="loss_counter">Loss Counter</field>
+              <value name="VALUE">
+                <block type="math_number" id="resetCounterToZero">
+                  <field name="NUM">0</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+          <statement name="ELSE">
+            <block type="variables_change" id="incrementLossCounter">
+              <field name="VAR" id="loss_counter">Loss Counter</field>
+              <value name="DELTA">
+                <block type="math_number" id="incrementByOne">
+                  <field name="NUM">1</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+  </block>
+</xml>
