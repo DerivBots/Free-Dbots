@@ -1,7 +1,7 @@
 # Why Dbots?
 All the bots are specifically designed to work on Deriv's DBot platform with AI technology, which you can access by <b><a href="https://dboty.com/Deriv-github">creating an account</a></b> or <b><a href="https://dboty.com/Deriv-github">by becoming a partner</a></b>. Remember, "Game theory rules everything. So come to the game."
 
-Check this playlist about how we turn $100 to approximately $300 =>> <b><a href="https://www.youtube.com/watch?v=ZlH-tWCum74&list=PLGPX9PHIb5CV2QyhnFFqy1ypHnUoaXJA9&pp=gAQBiAQB">Click to watch on YouTube</a></b>
+If your are interested many premium (paid) deriv bot, Check this =>> <b><a href="https://dboty.com/All-Premium-Bots">Premium Deriv Dbot</a></b>
 
 
 
