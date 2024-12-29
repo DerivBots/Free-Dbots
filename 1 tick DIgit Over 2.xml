@@ -19,7 +19,7 @@
     <statement name="INITIALIZATION">
       <block type="variables_set" id="aH]us/uN(gd.f=-pbA3[">
         <field name="VAR" id="ITiw_xSBxuYP6qNF)F|h" variabletype="">Max Loss Amount</field>
-        <value name="VALUE">--- RSI Calculation ---
+        <v
 def calculate_rsi(data, period=14):
     delta = data['Close'].diff()
     gain = delta.where(delta > 0, 0)
@@ -366,7 +366,7 @@ print(data[['Close', 'RSI', 'EMA', 'Signal']].tail())
                       <block type="logic_compare" id="0cU|Q$=vED.eAMG?O$4x">
                         <field name="OP">LT</field>
                         <value name="A">
-                          <block type="total_profit" id="#w%1hOnKBN5wL}u9VSEm"></block>
+                          <block ty
                         </value>
                         <value name="B">
                           <block type="variables_get" id="(x#2//]1WqH[fUq_}1iT">
