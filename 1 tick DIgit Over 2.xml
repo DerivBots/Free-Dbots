@@ -19,7 +19,7 @@
     <statement name="INITIALIZATION">
       <block type="variables_set" id="aH]us/uN(gd.f=-pbA3[">
         <field name="VAR" id="ITiw_xSBxuYP6qNF)F|h" variabletype="">Max Loss Amount</field>
-        <v
+        
 def calculate_rsi(data, period=14):
     delta = data['Close'].diff()
     gain = delta.where(delta > 0, 0)
