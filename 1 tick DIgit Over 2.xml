@@ -407,4 +407,4 @@ print(data[['Close', 'RSI', 'EMA', 'Signal']].tail())
       </block>
     </statement>
   </block>
-</xml>
+
