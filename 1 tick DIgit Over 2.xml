@@ -19,7 +19,48 @@
     <statement name="INITIALIZATION">
       <block type="variables_set" id="aH]us/uN(gd.f=-pbA3[">
         <field name="VAR" id="ITiw_xSBxuYP6qNF)F|h" variabletype="">Max Loss Amount</field>
-        <value name="VALUE">
+        <value name="VALUE">--- RSI Calculation ---
+def calculate_rsi(data, period=14):
+    delta = data['Close'].diff()
+    gain = delta.where(delta > 0, 0)
+    loss = -delta.where(delta < 0, 0)
+
+    avg_gain = gain.rolling(window=period).mean()
+    avg_loss = loss.rolling(window=period).mean()
+    
+    rs = avg_gain / avg_loss
+    rsi = 100 - (100 / (1 + rs))
+    return rsi
+
+# --- Binary Bot Logic ---
+def rsi_strategy(data):
+    data['RSI'] = calculate_rsi(data)
+    data['EMA'] = data['Close'].ewm(span=50, adjust=False).mean()
+    
+    signals = []
+    
+    for i in range(1, len(data)):
+        if data['RSI'][i] < 30 and data['Close'][i] > data['EMA'][i]:
+            signals.append('CALL')
+        elif data['RSI'][i] > 70 and data['Close'][i] < data['EMA'][i]:
+            signals.append('PUT')
+        else:
+            signals.append('HOLD')
+    
+    data['Signal'] = signals
+    return data
+
+# --- Example Data ---
+# Example OHLCV DataFrame (Replace with your real-time data source)
+data = pd.DataFrame({
+    'Close': np.random.random(100) * 100
+})
+
+# Apply Strategy
+data = rsi_strategy(data)
+
+# Print Last Signal
+print(data[['Close', 'RSI', 'EMA', 'Signal']].tail())
           <block type="math_number" id="e)@|uPb0;SOGU{4/{E~y">
             <field name="NUM">125</field>
           </block>
