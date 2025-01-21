@@ -1,0 +1,47 @@
+import requests
+
+# Initialize variables
+stake = 10
+initial_stake = 10
+stop_loss = 100
+max_profit = 100
+balance = 1000  # Example starting balance
+current_loss = 0
+current_profit = 0
+
+# Function to place a trade
+def place_trade(stake):
+    # Replace with actual API call to place a trade
+    response = requests.post('https://api.deriv.com/binary', data={'stake': stake, 'contract_type': 'over', 'duration': 2})
+    return response.json()
+
+# Function to check the trade result
+def check_result(trade_id):
+    # Replace with actual API call to check trade result
+    response = requests.get(f'https://api.deriv.com/binary/{trade_id}')
+    result = response.json()['result']
+    return result
+
+# Trading loop
+while True:
+    if current_loss >= stop_loss or current_profit >= max_profit:
+        break
+
+    trade = place_trade(stake)
+    trade_id = trade['id']
+    result = check_result(trade_id)
+
+    if result == 'win':
+        current_profit += stake
+        stake = initial_stake
+    else:
+        current_loss += stake
+        stake *= 2
+
+    balance += current_profit - current_loss
+
+    print(f"Balance: {balance}, Current Profit: {current_profit}, Current Loss: {current_loss}")
+
+    if current_loss >= stop_loss or current_profit >= max_profit:
+        print("Stopping bot due to stop loss or max profit reached.")
+        break
