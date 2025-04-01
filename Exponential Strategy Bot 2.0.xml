@@ -161,7 +161,7 @@
                           </block>
                         </value>
                         <statement name="DO0">
-                          <block type="purchase" id="Q;`vp48|v7pG%t@W6`uQ">
+                          <block type="purchase" id="Q;`"
                             <field name="PURCHASE_LIST">CALL</field>
                           </block>
                         </statement>
@@ -181,7 +181,7 @@
                               </block>
                             </value>
                             <statement name="DO0">
-                              <block type="purchase" id="(6u#[d#GMivNg9VL@5Kd">
+                              <block type="purchase" 
                                 <field name="PURCHASE_LIST">CALL</field>
                               </block>
                             </statement>
@@ -198,8 +198,8 @@
       </block>
     </statement>
   </block>
-  <block type="after_purchase" id="finish" collapsed="true" x="-13" y="566">
-    <statement name="AFTERPURCHASE_STACK">
+  <block type="after="true" x="-13" y="566">
+    <statement name
       <block type="controls_if" id="/TP%I,hfU)^|c.|/3ndN">
         <mutation else="1"></mutation>
         <value name="IF0">
