@@ -1,5 +1,5 @@
 # Why Dbots?
-All the bots are specifically designed to work on Deriv's DBot platform with AI technology, which you can access by <b><a href="https://dboty.com/Deriv-github" target="_blank">creating an account</a></b> or <b><a href="https://dboty.com/Deriv-github">by becoming a partner</a></b>. Remember, "Game theory rules everything. So come to the game."
+All the bots are specifically designed to work on Deriv's DBot platform with AI technology, which you can access by <b><a href="https://dboty.com/Deriv-github">creating an account</a></b> or <b><a href="https://dboty.com/Deriv-github">by becoming a partner</a></b>. Remember, "Game theory rules everything. So come to the game."
 
 
 Before Downloading all the free Dbots, Follow these steps to get started:
