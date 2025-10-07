@@ -1,9 +1,6 @@
 # Why Dbots?
 All the bots are specifically designed to work on Deriv's DBot platform with AI technology, which you can access by <b><a href="https://dboty.com/Deriv-github">creating an account</a></b> or <b><a href="https://dboty.com/Deriv-github">by becoming a partner</a></b>. Remember, "Game theory rules everything. So come to the game."
 
-If your are interested many premium (paid) deriv bot, Check this =>> <b><a href="https://dboty.com/All-Premium-Bots">Premium Deriv Dbot</a></b>
-
-
 
 Before Downloading all the free Dbots, Follow these steps to get started:
 
@@ -22,6 +19,6 @@ Click "Run" to get started to see the results
 
 <b>(Test all new Dbots files to Demo account before going to the real account)</b>
   
-  You can welcome to check our <b><a href="https://dboty.com">Dbot Website</a></b>, where we are posing many Free and premium Deriv Dbots each Week.
+You can welcome to check our <b><a href="https://dboty.com">Dbot Website</a></b>, where we are posing many Free and premium Deriv Dbots each Week.
   
-  Best regards, A Dbot Developer
+Best regards, A Dbot Developer
