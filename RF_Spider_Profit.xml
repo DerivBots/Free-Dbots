@@ -1,0 +1,1406 @@
+<xml xmlns="http://www.w3.org/1999/xhtml" collection="false">
+  <variables>
+    <variable type="" id="K](~Rhe}u)tt25^)b$:K">[fxl] Input Line 1</variable>
+    <variable type="" id="%+uPKi!UN20$4a*H(5N;">[fxl] Input Line 2</variable>
+    <variable type="" id="G/%b^-~Zs^DK=+)[%)D?">fxl:CROSS</variable>
+    <variable type="" id="NZg/^iC@_#,m{p5U]6yG">Stake</variable>
+    <variable type="" id="u}iQg[L,m[px(d9J4Kl=">Satke Win</variable>
+    <variable type="" id="-,?[bv4hGFL]aa{+F]?H">Take Profit</variable>
+    <variable type="" id="p^$MiWw}5`1fDD%k4Zvu">Stop Loss</variable>
+  </variables>
+  <block type="trade" id="xgH69|xFn9=70w.*3Vo@" x="-162" y="-74">
+    <field name="MARKET_LIST">synthetic_index</field>
+    <field name="SUBMARKET_LIST">random_index</field>
+    <field name="SYMBOL_LIST">R_100</field>
+    <field name="TRADETYPECAT_LIST">callput</field>
+    <field name="TRADETYPE_LIST">risefall</field>
+    <field name="TYPE_LIST">both</field>
+    <field name="CANDLEINTERVAL_LIST">60</field>
+    <field name="TIME_MACHINE_ENABLED">FALSE</field>
+    <field name="RESTARTONERROR">TRUE</field>
+    <statement name="INITIALIZATION">
+      <block type="variables_set" id="dyvo#dUsr3DOE0sOhy=q">
+        <field name="VAR" id="NZg/^iC@_#,m{p5U]6yG" variabletype="">Stake</field>
+        <value name="VALUE">
+          <block type="math_number" id="Hgu@H]!`8YY;bVWn,D2-">
+            <field name="NUM">0.35</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id=".8C1^$t/tMuEno96|Wqm">
+            <field name="VAR" id="u}iQg[L,m[px(d9J4Kl=" variabletype="">Satke Win</field>
+            <value name="VALUE">
+              <block type="math_number" id="b0KIq_VYqT#TIgG(%B}l">
+                <field name="NUM">0.35</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="H92ik4=-7T`OvM$#kWJ^">
+                <field name="VAR" id="-,?[bv4hGFL]aa{+F]?H" variabletype="">Take Profit</field>
+                <value name="VALUE">
+                  <block type="math_number" id="dMgX([Qf;,(mh(?T1O5m">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="X2{j!d.qtHS:].1F`j##">
+                    <field name="VAR" id="p^$MiWw}5`1fDD%k4Zvu" variabletype="">Stop Loss</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="y-=k%x5(r/HsHgd=RvSp">
+                        <field name="NUM">-5</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="SUBMARKET">
+      <block type="tradeOptions" id="x=V33~4Lb|(sLv`J[:Eb">
+        <field name="DURATIONTYPE_LIST">t</field>
+        <field name="CURRENCY_LIST">USD</field>
+        <field name="BARRIEROFFSETTYPE_LIST">+</field>
+        <field name="SECONDBARRIEROFFSETTYPE_LIST">-</field>
+        <value name="DURATION">
+          <shadow type="math_number" id="l@rB%4QB9a`0Xd]D{SD=">
+            <field name="NUM">3</field>
+          </shadow>
+        </value>
+        <value name="AMOUNT">
+          <shadow type="math_number" id="ml)25~7^q}3I9}vjf:%K">
+            <field name="NUM">1</field>
+          </shadow>
+          <block type="variables_get" id="Uab)}OfGdaQ9|a*1(ipb">
+            <field name="VAR" id="NZg/^iC@_#,m{p5U]6yG" variabletype="">Stake</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="loader" id="?N++,GY|VjtQ4E58EiN6" collapsed="true" x="0" y="0">
+    <field name="URL">https://gist.githubusercontent.com/Fruitfella/e053ca9696b70d8fafa66f7f69e278ed/raw/3d8ed76674910ece771ecf0625da2da70cb6d118/FXL_v.1.xml</field>
+  </block>
+  <block type="procedures_defnoreturn" id="Qn5|UI%;X,3cxsafjI;0" collapsed="true" x="0" y="0">
+    <mutation>
+      <arg name="[fxl] Input Line 1" varid="K](~Rhe}u)tt25^)b$:K"></arg>
+      <arg name="[fxl] Input Line 2" varid="%+uPKi!UN20$4a*H(5N;"></arg>
+    </mutation>
+    <field name="NAME">(5)FRUITFELLA's CROSS-Lines</field>
+    <comment pinned="false" h="80" w="160">CROSS-Lines by Fruitfella</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="81WM+#rWWZoz~]/`1*f`">
+        <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+        <value name="VALUE">
+          <block type="logic_null" id="k!!XQ!wV5k;,r=U|`,[5"></block>
+        </value>
+        <next>
+          <block type="controls_if" id="F^chlqXZrbvl|O]nR]UF">
+            <mutation elseif="3" else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_negate" id="wSO4e7kpPa+deKV_Fp_E">
+                <value name="BOOL">
+                  <block type="variables_get" id="f?.(:KJ1m:$5F*c!B{~u">
+                    <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="notify" id="tgELK8FeNVnktM7uG0A-">
+                <field name="NOTIFICATION_TYPE">error</field>
+                <field name="NOTIFICATION_SOUND">error</field>
+                <value name="MESSAGE">
+                  <shadow type="text" id="/ZNH%6T20H,Z=qhtVX5Q">
+                    <field name="TEXT">FRUITFELLA's CROSS-Lines || Error! Line 1 and Line 2 must not empty!!</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="notify" id="l*c6]0zn+kw:!#c,Hkl3">
+                    <field name="NOTIFICATION_TYPE">error</field>
+                    <field name="NOTIFICATION_SOUND">silent</field>
+                    <value name="MESSAGE">
+                      <shadow type="text" id="-^t$z,a05%J=G.gW-70k">
+                        <field name="TEXT">|| Please input "LIST" data to Line 1 ||</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_negate" id="3Uk19/[ZWq4F-Te,Ss,O">
+                <value name="BOOL">
+                  <block type="variables_get" id="-Mrg)jlI^t}]z,tzInCO">
+                    <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="notify" id="l7O_keZvQ$a^CB0XU.9d">
+                <field name="NOTIFICATION_TYPE">error</field>
+                <field name="NOTIFICATION_SOUND">error</field>
+                <value name="MESSAGE">
+                  <shadow type="text" id="C-{q%uWl4lmxc1n%vkiO">
+                    <field name="TEXT">FRUITFELLA's CROSS-Lines || Error! Line 1 and Line 2 must not empty!!</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="notify" id="7|PJa2C8;#p-g}C13Y[b">
+                    <field name="NOTIFICATION_TYPE">error</field>
+                    <field name="NOTIFICATION_SOUND">silent</field>
+                    <value name="MESSAGE">
+                      <shadow type="text" id="llg=kpyOuX9rRc7:5f)V">
+                        <field name="TEXT">|| Please input "LIST" data to Line 2 ||</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <value name="IF2">
+              <block type="math_number_property" id="n|hT*N!sT/i/m^4Tl|^W">
+                <mutation divisor_input="false"></mutation>
+                <field name="PROPERTY">WHOLE</field>
+                <value name="NUMBER_TO_CHECK">
+                  <shadow type="math_number" id="Y$6)5bKkNCh=Xl4EgM/%">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="variables_get" id=")$,mSy;]Hk2zsJmVa3vc">
+                    <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO2">
+              <block type="notify" id="n//;Wx_Ml%..T4dKfeco">
+                <field name="NOTIFICATION_TYPE">error</field>
+                <field name="NOTIFICATION_SOUND">error</field>
+                <value name="MESSAGE">
+                  <shadow type="text" id="4N|8,7!HL,`h/J^^:.Am">
+                    <field name="TEXT">FRUITFELLA's CROSS-Lines || Error! Wrong data on Line 1!!</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="notify" id="mlDZpI%h95t{kA3)(15c">
+                    <field name="NOTIFICATION_TYPE">error</field>
+                    <field name="NOTIFICATION_SOUND">silent</field>
+                    <value name="MESSAGE">
+                      <shadow type="text" id="cB):G6/TZXx$gnxaubDE">
+                        <field name="TEXT">|| Please input "LIST" data to Line 1 ||</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <value name="IF3">
+              <block type="math_number_property" id="}6^Kt(!$iDeMnODUa,zu">
+                <mutation divisor_input="false"></mutation>
+                <field name="PROPERTY">WHOLE</field>
+                <value name="NUMBER_TO_CHECK">
+                  <shadow type="math_number" id="Y$6)5bKkNCh=Xl4EgM/%">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="variables_get" id="sC`:D=`9M@oSQqt/d^rN">
+                    <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO3">
+              <block type="notify" id="5OCezvJ(VWjP88U`UM44">
+                <field name="NOTIFICATION_TYPE">error</field>
+                <field name="NOTIFICATION_SOUND">error</field>
+                <value name="MESSAGE">
+                  <shadow type="text" id="`Vkx$:o[Y!4#pHQBLZVb">
+                    <field name="TEXT">FRUITFELLA's CROSS-Lines || Error! Wrong data on Line 2!!</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="notify" id="A+TQs,:WHPR%~=48cIo6">
+                    <field name="NOTIFICATION_TYPE">error</field>
+                    <field name="NOTIFICATION_SOUND">silent</field>
+                    <value name="MESSAGE">
+                      <shadow type="text" id="k,:4BZ|pJj49Q+LPb|JU">
+                        <field name="TEXT">|| Please input "LIST" data to Line 2 ||</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="controls_if" id="M1#M#g9)*D38:tTd@(yK">
+                <mutation elseif="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_compare" id="Zg{Ez~lEO)`=7y71psZ?">
+                    <field name="OP">GT</field>
+                    <value name="A">
+                      <block type="lists_getIndex" id="@0A[Yq_BEz}Q]^z4qzDs">
+                        <mutation statement="false" at="true"></mutation>
+                        <field name="MODE">GET</field>
+                        <field name="WHERE">FROM_END</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="rh|VVjf#Eym[gnIaa5|Q">
+                            <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="math_number" id="rCiZ8F!|nL7PsBlW6b~4">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="lists_getIndex" id="1,4^G|e2;pur?=Z:oNM%">
+                        <mutation statement="false" at="true"></mutation>
+                        <field name="MODE">GET</field>
+                        <field name="WHERE">FROM_END</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="Tcy5_3+FJ=)Z?ck42Z59">
+                            <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="math_number" id="t=W9+ucnBoqY=y%X021_">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="controls_if" id="^L|og?Fi#Y2)rXprLz3^">
+                    <mutation elseif="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="rX^e*)OBtp7[Rv1)`B2/">
+                        <field name="OP">LT</field>
+                        <value name="A">
+                          <block type="lists_getIndex" id="AL@RA}cqkr=Z#sPTXH8C">
+                            <mutation statement="false" at="true"></mutation>
+                            <field name="MODE">GET</field>
+                            <field name="WHERE">FROM_END</field>
+                            <value name="VALUE">
+                              <block type="variables_get" id="Gmh|}~=u@L[f5n^8yq#I">
+                                <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                              </block>
+                            </value>
+                            <value name="AT">
+                              <block type="math_number" id="R|fsNin(H?CG?gT-X5+U">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="lists_getIndex" id="LY0n2_0=Os0h3udfjUJF">
+                            <mutation statement="false" at="true"></mutation>
+                            <field name="MODE">GET</field>
+                            <field name="WHERE">FROM_END</field>
+                            <value name="VALUE">
+                              <block type="variables_get" id="@cWewQ-P0H$7Ua,hh1Lw">
+                                <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                              </block>
+                            </value>
+                            <value name="AT">
+                              <block type="math_number" id="33@H70dO63@%rXIvorh@">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="variables_set" id="C=9O!mgCI3.-mxKWV-Ue">
+                        <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="%=oNV=0qn()^!~75^6aB">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_operation" id="rU.^gRvQYjM$#i06+,3c" inline="false">
+                        <field name="OP">AND</field>
+                        <value name="A">
+                          <block type="logic_compare" id="DpTTZCG}-A)WC-MkFisw">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="lists_getIndex" id="zy^0Kd;o4u4u6?}46ieA">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="Q$-4]8bL3xrMZAKd^7(Y">
+                                    <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="pPKF86zbW($.!bf]Bq:Q">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="lists_getIndex" id=";;7LIL_zgIiD%#%|}K^D">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="Kd6`yEs(+RrWHtl}nI3%">
+                                    <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="bB6?7EwxOc1#IL.A}`+]">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_compare" id="=EC0mLHT4s.7p`f(ouYg">
+                            <field name="OP">LT</field>
+                            <value name="A">
+                              <block type="lists_getIndex" id="jb:d@eU^{qJXS3U}a^SS">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="N^`go$`7oQ8YI:i8`/R#">
+                                    <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="e:gvShDb-cQ7_vD[%/#)">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="lists_getIndex" id="g:vlZcg4jSWIkWqH)BS?">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="q]d7T{UW1RsM~Y;Mc$=.">
+                                    <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="4$H{plBmjudQ7NqJ6@Kl">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="variables_set" id="xCB2OxmBf6L|!^%A.BDA">
+                        <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="Ltqld64p*E}Gjp}bOnhl">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+                <value name="IF1">
+                  <block type="logic_compare" id="}`o,k}N993xj7j]@I+6t">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                      <block type="lists_getIndex" id="*aa8AK^7Q]b/.yhM]ct|">
+                        <mutation statement="false" at="true"></mutation>
+                        <field name="MODE">GET</field>
+                        <field name="WHERE">FROM_END</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="C`V=X(D^HxvOq`8a/kl-">
+                            <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="math_number" id="w}mhYa.6Yt?CXbijpx/_">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="lists_getIndex" id="M9?qDyylAPmbakE!:bPD">
+                        <mutation statement="false" at="true"></mutation>
+                        <field name="MODE">GET</field>
+                        <field name="WHERE">FROM_END</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="U7Gb?I/-[:`6R[a3#-;M">
+                            <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="math_number" id="BevEL2Q43J!:~9.0z}ke">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO1">
+                  <block type="controls_if" id="Lb]FSHPF@oltCk;]78Qm">
+                    <mutation elseif="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="k!b=-BnWI61ELo6z)_:%">
+                        <field name="OP">GT</field>
+                        <value name="A">
+                          <block type="lists_getIndex" id="s0X7v[av*Cv%SDPl~IA/">
+                            <mutation statement="false" at="true"></mutation>
+                            <field name="MODE">GET</field>
+                            <field name="WHERE">FROM_END</field>
+                            <value name="VALUE">
+                              <block type="variables_get" id="L`)TA;vX?+_FLf%26{^=">
+                                <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                              </block>
+                            </value>
+                            <value name="AT">
+                              <block type="math_number" id="$3gzPtxK2v5vbsFdMMGc">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="lists_getIndex" id="t[Iag}%(oeS]b/VM/(#X">
+                            <mutation statement="false" at="true"></mutation>
+                            <field name="MODE">GET</field>
+                            <field name="WHERE">FROM_END</field>
+                            <value name="VALUE">
+                              <block type="variables_get" id="T^BwKX,^1vEr?2k~}WE.">
+                                <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                              </block>
+                            </value>
+                            <value name="AT">
+                              <block type="math_number" id="RvE_eF?^/?si@OQlM$Jp">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="variables_set" id="E6idD84Gufob^(u-?%L*">
+                        <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="mqk{C3n(++mfbK2q/A5I">
+                            <field name="NUM">-1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_operation" id="ZxX:bzzH~^KRI2hK`8:e" inline="false">
+                        <field name="OP">AND</field>
+                        <value name="A">
+                          <block type="logic_compare" id="9R=rjm+OQQUL]SeKyM~V">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="lists_getIndex" id="u[Ta1}YR2fOJ(7*M:DUL">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="@jQoDBsiZVjc3$-gR(m?">
+                                    <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="G_{70jlr5kUU_eN)?];#">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="lists_getIndex" id="~PC%!3vO.q^}Wz~=ckN_">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="8,gfnTmULf%)u{R,,su3">
+                                    <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="ASw8u!_leO-hxspbqfC_">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_compare" id="`B-yp*3J@M6R@W+tEW7q">
+                            <field name="OP">GT</field>
+                            <value name="A">
+                              <block type="lists_getIndex" id="@w%xI(dof^oK9h9B[?,+">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="T)KG-fcuP|kp5)0:}^U]">
+                                    <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="kUxdAa3(XlGIV9WMfb4(">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="lists_getIndex" id="2?Q4f=Ud_^xd?|y[mo]B">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="Q6eJ6q1E:)d$%jjJkHn%">
+                                    <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="ybjnfFtZ?s{PIs21d{x4">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="variables_set" id="AE/|6qfw}wy1btIcS5qt">
+                        <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="E9MPC_*ubC+B4)$~I3Kz">
+                            <field name="NUM">-1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defreturn" id="Jk6+?KlxP}te1.Ps#Tl^" collapsed="true" x="0" y="0">
+    <field name="NAME">[fxl] CROSS-UP</field>
+    <comment pinned="false" h="80" w="160">CROSS-Lines by Fruitfella</comment>
+    <value name="RETURN">
+      <block type="math_number_property" id="L9{S~P+O.7FCtJuxVI8!">
+        <mutation divisor_input="false"></mutation>
+        <field name="PROPERTY">POSITIVE</field>
+        <value name="NUMBER_TO_CHECK">
+          <shadow type="math_number" id="E{k^jA:B)vo@k.9J]$HO">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="variables_get" id="5pz3qUe8Wrk2GW0nDq#P">
+            <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+  <block type="procedures_defreturn" id="$dou.eg/U?d6ZVs2xjt_" collapsed="true" x="0" y="0">
+    <field name="NAME">[fxl] CROSS-DOWN</field>
+    <comment pinned="false" h="80" w="160">CROSS-Lines by Fruitfella</comment>
+    <value name="RETURN">
+      <block type="math_number_property" id="EDh@N0B`r2,Sb]m[=;$S">
+        <mutation divisor_input="false"></mutation>
+        <field name="PROPERTY">NEGATIVE</field>
+        <value name="NUMBER_TO_CHECK">
+          <shadow type="math_number" id="E{k^jA:B)vo@k.9J]$HO">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="variables_get" id="NKSGOP9|]AmmTq#?B(-7">
+            <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+  <block type="loader" id="^BRbwH9=xB+!$gJNe|YO" collapsed="true" x="0" y="0">
+    <field name="URL">https://gist.githubusercontent.com/Fruitfella/e053ca9696b70d8fafa66f7f69e278ed/raw/3d8ed76674910ece771ecf0625da2da70cb6d118/FXL_v.1.xml</field>
+  </block>
+  <block type="procedures_defnoreturn" id="5ER)K;uP.Ht/0xB6$x3," collapsed="true" x="0" y="0">
+    <mutation>
+      <arg name="[fxl] Input Line 1" varid="K](~Rhe}u)tt25^)b$:K"></arg>
+      <arg name="[fxl] Input Line 2" varid="%+uPKi!UN20$4a*H(5N;"></arg>
+    </mutation>
+    <field name="NAME">(5)FRUITFELLA's CROSS-Lines2</field>
+    <comment pinned="false" h="80" w="160">CROSS-Lines by Fruitfella</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="vmzmPgYCbqF;PRBbrS@L">
+        <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+        <value name="VALUE">
+          <block type="logic_null" id="$pfiOd?Y36^E-~@pI,Vw"></block>
+        </value>
+        <next>
+          <block type="controls_if" id="3:mVg;oE{Q8zI(~^6Lom">
+            <mutation elseif="3" else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_negate" id="9/sjwOFFH68mOTmNQZMO">
+                <value name="BOOL">
+                  <block type="variables_get" id="/3tvNG|:#r=+gA[+@)n|">
+                    <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="notify" id="#]A=)#UQlgKY$Kuv_P[z">
+                <field name="NOTIFICATION_TYPE">error</field>
+                <field name="NOTIFICATION_SOUND">error</field>
+                <value name="MESSAGE">
+                  <shadow type="text" id="d]k}8j,[sqUr(5@=*U%-">
+                    <field name="TEXT">FRUITFELLA's CROSS-Lines || Error! Line 1 and Line 2 must not empty!!</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="notify" id="Xi?#n2#%B]_XnQ}%W)#V">
+                    <field name="NOTIFICATION_TYPE">error</field>
+                    <field name="NOTIFICATION_SOUND">silent</field>
+                    <value name="MESSAGE">
+                      <shadow type="text" id="X)(je}JR)Ak`.Qrk2ZFw">
+                        <field name="TEXT">|| Please input "LIST" data to Line 1 ||</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_negate" id="]2U.YV*z0|vx(oN7B2UZ">
+                <value name="BOOL">
+                  <block type="variables_get" id="=,/~Px$Q45*~@N1:ty;a">
+                    <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="notify" id="Z6?tC*9I`CMrZTw29%r6">
+                <field name="NOTIFICATION_TYPE">error</field>
+                <field name="NOTIFICATION_SOUND">error</field>
+                <value name="MESSAGE">
+                  <shadow type="text" id="pS.X/B=MHWt4iCECrMX8">
+                    <field name="TEXT">FRUITFELLA's CROSS-Lines || Error! Line 1 and Line 2 must not empty!!</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="notify" id="|1~)Eh52:v?$ClB_Jk*(">
+                    <field name="NOTIFICATION_TYPE">error</field>
+                    <field name="NOTIFICATION_SOUND">silent</field>
+                    <value name="MESSAGE">
+                      <shadow type="text" id="aAD4:g5x}YiJG3C2pv$b">
+                        <field name="TEXT">|| Please input "LIST" data to Line 2 ||</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <value name="IF2">
+              <block type="math_number_property" id="syKR2g)~WR~8{:-||5?d">
+                <mutation divisor_input="false"></mutation>
+                <field name="PROPERTY">WHOLE</field>
+                <value name="NUMBER_TO_CHECK">
+                  <shadow type="math_number" id="Y$6)5bKkNCh=Xl4EgM/%">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="variables_get" id="9zomtFdju*aWVslBm(@C">
+                    <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO2">
+              <block type="notify" id="$pj0p0i1,==PTX4nU5y8">
+                <field name="NOTIFICATION_TYPE">error</field>
+                <field name="NOTIFICATION_SOUND">error</field>
+                <value name="MESSAGE">
+                  <shadow type="text" id="^-[PxRsoTk_bZy:i|[YZ">
+                    <field name="TEXT">FRUITFELLA's CROSS-Lines || Error! Wrong data on Line 1!!</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="notify" id="T={q(r(OKmGjnzAt|Yxz">
+                    <field name="NOTIFICATION_TYPE">error</field>
+                    <field name="NOTIFICATION_SOUND">silent</field>
+                    <value name="MESSAGE">
+                      <shadow type="text" id="o!pK!XM(rYJG_OXf7Pt8">
+                        <field name="TEXT">|| Please input "LIST" data to Line 1 ||</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <value name="IF3">
+              <block type="math_number_property" id="+,/}O*:NBPIg*Ht|21w]">
+                <mutation divisor_input="false"></mutation>
+                <field name="PROPERTY">WHOLE</field>
+                <value name="NUMBER_TO_CHECK">
+                  <shadow type="math_number" id="Y$6)5bKkNCh=Xl4EgM/%">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="variables_get" id="2X83T;Bn_Ulk:4{JRSL?">
+                    <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO3">
+              <block type="notify" id="#]:K;6FsTWBs]=VI4_YZ">
+                <field name="NOTIFICATION_TYPE">error</field>
+                <field name="NOTIFICATION_SOUND">error</field>
+                <value name="MESSAGE">
+                  <shadow type="text" id="3mjT{JCG2-}ThjTdiQP/">
+                    <field name="TEXT">FRUITFELLA's CROSS-Lines || Error! Wrong data on Line 2!!</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="notify" id="xwuq:EN%9]W~0XAS7lHE">
+                    <field name="NOTIFICATION_TYPE">error</field>
+                    <field name="NOTIFICATION_SOUND">silent</field>
+                    <value name="MESSAGE">
+                      <shadow type="text" id="_5fK-A=1vWJJ*?Grwr~~">
+                        <field name="TEXT">|| Please input "LIST" data to Line 2 ||</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="controls_if" id=")/K-)oOHAxL4Zl#eNv.Z">
+                <mutation elseif="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_compare" id="5x@jeAL%MS83gSd_f@81">
+                    <field name="OP">GT</field>
+                    <value name="A">
+                      <block type="lists_getIndex" id="F|1Q.ty|7;p2EcX{wGG^">
+                        <mutation statement="false" at="true"></mutation>
+                        <field name="MODE">GET</field>
+                        <field name="WHERE">FROM_END</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="v}J58%vZ#3~|x.kx|-]P">
+                            <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="math_number" id="jfabXEsri7dX.+J#Z3hc">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="lists_getIndex" id="1tZ@7x:@IT$$32#SG{Un">
+                        <mutation statement="false" at="true"></mutation>
+                        <field name="MODE">GET</field>
+                        <field name="WHERE">FROM_END</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="7D[@v932dQ1g%$5Axnid">
+                            <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="math_number" id="}j^tI)]=m#7t#CtRQI@W">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="controls_if" id="NQdwgu1^Aja:%6CndWMO">
+                    <mutation elseif="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="2QY;rl/,who5PFll/6^9">
+                        <field name="OP">LT</field>
+                        <value name="A">
+                          <block type="lists_getIndex" id="D;{-rNT]XOq{D(_aqSjg">
+                            <mutation statement="false" at="true"></mutation>
+                            <field name="MODE">GET</field>
+                            <field name="WHERE">FROM_END</field>
+                            <value name="VALUE">
+                              <block type="variables_get" id="?[`n0z~}P73F@dSrDHfF">
+                                <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                              </block>
+                            </value>
+                            <value name="AT">
+                              <block type="math_number" id="oGzA5Z!?jQlAIJd$e7JH">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="lists_getIndex" id="-ZMZcz/j!xOQPkOH4xz!">
+                            <mutation statement="false" at="true"></mutation>
+                            <field name="MODE">GET</field>
+                            <field name="WHERE">FROM_END</field>
+                            <value name="VALUE">
+                              <block type="variables_get" id="p|M`3!GwP0`rX]F5DU|.">
+                                <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                              </block>
+                            </value>
+                            <value name="AT">
+                              <block type="math_number" id="50%h0bDY*yHA@OaAA:T9">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="variables_set" id="Pj.$po04kioq/A68VTrb">
+                        <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="8xF4lN8?k(R(%S9|c.$H">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_operation" id="`T+_`{fWCh,%a2ZDMn32" inline="false">
+                        <field name="OP">AND</field>
+                        <value name="A">
+                          <block type="logic_compare" id="Y$U6+.+#t5-sz/)QL{lv">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="lists_getIndex" id="Y`Qbx7vZ*T9(~uHGH?E:">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="8@9)J2z{vM][KL`VRI=^">
+                                    <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="LD/iUiNFk3US7f-,_t8D">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="lists_getIndex" id="yeU~hsEgt1LLik~[N?ow">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="MG5yfrt.5iXUr]oK|q8l">
+                                    <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="j|fjfJSkB%66;:$yX~H~">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_compare" id="2H(ewtD6zZn~rA~S?~=n">
+                            <field name="OP">LT</field>
+                            <value name="A">
+                              <block type="lists_getIndex" id="P*++3G`|].0dJUV[9(jM">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="RI`#7PL#]wz0sD3=cVHa">
+                                    <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="=ww{gz5}L67L,Xd#ziGf">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="lists_getIndex" id="hJEiP:;,jr`);ApFyg=]">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="R`Uzq_##6|FuZmRb$-5g">
+                                    <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="r_#^Tz*TiH}V/:?E6Y`V">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="variables_set" id="+]S{;Eb_;:6[!~VB4A`f">
+                        <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="r:L*779%@Too}hJ-tvj+">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+                <value name="IF1">
+                  <block type="logic_compare" id="nicmN)#.uEHv@1|Q{Op.">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                      <block type="lists_getIndex" id="%_z#fK^ozj|JxhGAMmHf">
+                        <mutation statement="false" at="true"></mutation>
+                        <field name="MODE">GET</field>
+                        <field name="WHERE">FROM_END</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="9o(W8;#f1xx#PO[%SD^-">
+                            <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="math_number" id="XBhN8^Q@|_BvpZ6OMx]o">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="lists_getIndex" id="h4Jx9NeqV[KB9Y,yc=ma">
+                        <mutation statement="false" at="true"></mutation>
+                        <field name="MODE">GET</field>
+                        <field name="WHERE">FROM_END</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="q**Y`ecFp-KpFO3O^wyW">
+                            <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="math_number" id="m;-f{9d2S/7CQUt1#r7V">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO1">
+                  <block type="controls_if" id="ezyy!X56O|40#yXETd:v">
+                    <mutation elseif="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="_9}u,_=8Jr?jA0Tzls`W">
+                        <field name="OP">GT</field>
+                        <value name="A">
+                          <block type="lists_getIndex" id="W|l|23uU|(l(g1+QdDuI">
+                            <mutation statement="false" at="true"></mutation>
+                            <field name="MODE">GET</field>
+                            <field name="WHERE">FROM_END</field>
+                            <value name="VALUE">
+                              <block type="variables_get" id="*f}CbyYZt@H=~c0($PPS">
+                                <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                              </block>
+                            </value>
+                            <value name="AT">
+                              <block type="math_number" id="e(##mrf)waN(8!M7O5AI">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="lists_getIndex" id="3=RHo08JNX.2Eak`gjlL">
+                            <mutation statement="false" at="true"></mutation>
+                            <field name="MODE">GET</field>
+                            <field name="WHERE">FROM_END</field>
+                            <value name="VALUE">
+                              <block type="variables_get" id="y})gS$TE2r)T~4e,7E?Z">
+                                <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                              </block>
+                            </value>
+                            <value name="AT">
+                              <block type="math_number" id="Z|gosj3:+36*]x@;_i/^">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="variables_set" id="@uMK_;}M3!E^i8_9CY_$">
+                        <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="W$ZX%?37k;#2:[1!3#Sa">
+                            <field name="NUM">-1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_operation" id="#O%nufrVwiTG?lMku{~." inline="false">
+                        <field name="OP">AND</field>
+                        <value name="A">
+                          <block type="logic_compare" id="s*;`9Phy(kZNmE5[?Lym">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="lists_getIndex" id="TkG,lm!FTZ}Q/|Us?5rV">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="=0-swLHT1+q[x}t/aaDo">
+                                    <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="I:h$pwWN}Kx*MCRtv_;/">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="lists_getIndex" id="G{WE1-PS[HR1bQr0PwWr">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="*g=W1jPdT}y8LShgV{X+">
+                                    <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="H:Ha)HDXmsE+4ng/V15$">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_compare" id="O[U8*%{aZ;T=ZptMK{tl">
+                            <field name="OP">GT</field>
+                            <value name="A">
+                              <block type="lists_getIndex" id="LR76~V(*qsNrq#M)0~[R">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id="V[}Rcw?%{zqW5c6m%Vbk">
+                                    <field name="VAR" id="K](~Rhe}u)tt25^)b$:K" variabletype="">[fxl] Input Line 1</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="eEp9[P;1VeawjSi_pq-.">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="lists_getIndex" id="!(8nAVJV63pgGtYp*1@x">
+                                <mutation statement="false" at="true"></mutation>
+                                <field name="MODE">GET</field>
+                                <field name="WHERE">FROM_END</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id=",eS]S8lsewotm.esZoqR">
+                                    <field name="VAR" id="%+uPKi!UN20$4a*H(5N;" variabletype="">[fxl] Input Line 2</field>
+                                  </block>
+                                </value>
+                                <value name="AT">
+                                  <block type="math_number" id="5)z7!GK.G*8p`k(aL^dz">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="variables_set" id="-eK5R#2bj]||:Ik0lWt6">
+                        <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="j^bnw5OHZOAvHZe]IFF#">
+                            <field name="NUM">-1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defreturn" id="dDt(Ex|X/ZZPRje0}9|1" collapsed="true" x="0" y="0">
+    <field name="NAME">[fxl] CROSS-UP2</field>
+    <comment pinned="false" h="80" w="160">CROSS-Lines by Fruitfella</comment>
+    <value name="RETURN">
+      <block type="math_number_property" id="GTz2{dd%)m;.XR~sc4m?">
+        <mutation divisor_input="false"></mutation>
+        <field name="PROPERTY">POSITIVE</field>
+        <value name="NUMBER_TO_CHECK">
+          <shadow type="math_number" id="E{k^jA:B)vo@k.9J]$HO">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="variables_get" id=")X[JxEB1WO@cSGj0h||D">
+            <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+  <block type="procedures_defreturn" id="Xspo2[)!KXA/[_3s^,nT" collapsed="true" x="0" y="0">
+    <field name="NAME">[fxl] CROSS-DOWN2</field>
+    <comment pinned="false" h="80" w="160">CROSS-Lines by Fruitfella</comment>
+    <value name="RETURN">
+      <block type="math_number_property" id="6VwmU+3iQLg.BWJ:|xzb">
+        <mutation divisor_input="false"></mutation>
+        <field name="PROPERTY">NEGATIVE</field>
+        <value name="NUMBER_TO_CHECK">
+          <shadow type="math_number" id="E{k^jA:B)vo@k.9J]$HO">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="variables_get" id=".?n1fI^Jgl!LHKf0://o">
+            <field name="VAR" id="G/%b^-~Zs^DK=+)[%)D?" variabletype="">fxl:CROSS</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+  <block type="after_purchase" id="D^Jz1^n=2vtZku1vBN@;" x="475" y="14">
+    <statement name="AFTERPURCHASE_STACK">
+      <block type="controls_if" id="qk]u[2WVVrXU)Za,HG*b">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="contract_check_result" id="+nyW{9aj2aAo#Y_[jC+i">
+            <field name="CHECK_RESULT">loss</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="math_change" id="2f@`5!Jg#M,^zH/VRwID">
+            <field name="VAR" id="NZg/^iC@_#,m{p5U]6yG" variabletype="">Stake</field>
+            <value name="DELTA">
+              <shadow type="math_number" id="#rs$fWQ.p![ruov@!!R)">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="math_arithmetic" id="W-R~LdP(0]Myeawb]Fgn">
+                <field name="OP">MULTIPLY</field>
+                <value name="A">
+                  <shadow type="math_number" id="qak-WLQq-ZVzk|kpzDUc">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id=";dm);~`X[_I^~$7jUAM5">
+                    <field name="VAR" id="NZg/^iC@_#,m{p5U]6yG" variabletype="">Stake</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="hQqW)8vKPNO4)o!/p93c">
+                    <field name="NUM">1.2</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="variables_set" id="klb[y~0kV9)XkYcoD8@}">
+            <field name="VAR" id="NZg/^iC@_#,m{p5U]6yG" variabletype="">Stake</field>
+            <value name="VALUE">
+              <block type="variables_get" id="`Q%d+F;r-l+EX{D!Tz?G">
+                <field name="VAR" id="u}iQg[L,m[px(d9J4Kl=" variabletype="">Satke Win</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="d0Jw6-rrbeleYXB7V=yJ">
+            <mutation elseif="1" else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="/)tW{0hx)H*F^I^,|WPp">
+                <field name="OP">GTE</field>
+                <value name="A">
+                  <block type="total_profit" id="3vQM!aZkcJxO)$$:}epX"></block>
+                </value>
+                <value name="B">
+                  <block type="variables_get" id="So#CJKfSWEH?_H!*JS{J">
+                    <field name="VAR" id="-,?[bv4hGFL]aa{+F]?H" variabletype="">Take Profit</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="text_print" id="w/vvf^9Ctct.87k0DiR." collapsed="true">
+                <value name="TEXT">
+                  <shadow type="text" id="Nm#l@K=A1.ODNSw8.OYm">
+                    <field name="TEXT">Great! Take Profit Bot Source Ultimate Trading Scripts: Visit T.me/binaryboss101: Upgrade to Premium For More Accurate Binary Bots &amp; STrategies: Email Binaryscript101@gmail.com ;💰 </field>
+                  </shadow>
+                </value>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare" id="@$~yOWIkpO8=%mgF~NXh">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="total_profit" id="ckq,})Ag]V^s]L2dBzg{"></block>
+                </value>
+                <value name="B">
+                  <block type="variables_get" id="0_f3R7oNUl(T._fkze13">
+                    <field name="VAR" id="p^$MiWw}5`1fDD%k4Zvu" variabletype="">Stop Loss</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="text_print" id="w.9D(wGP:$eaW~$/+#FA" collapsed="true">
+                <value name="TEXT">
+                  <shadow type="text" id="~~14NU-Y0fI_xSVx_tj%">
+                    <field name="TEXT">Stop Loss!, Never Give Up: Market is Dynamic; Trade again late👌r</field>
+                  </shadow>
+                </value>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="trade_again" id="c)S|KjoQdXc8l#J@5z3P"></block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="during_purchase" id="(4;NieXd}j|Bn!c-YiC|" collapsed="true" x="190" y="98">
+    <statement name="DURING_PURCHASE_STACK">
+      <block type="controls_if" id="8?eYKAW%VczmRXQ-ou3r">
+        <value name="IF0">
+          <block type="check_sell" id="M=:_KpEeRAJY_}XTU^8~"></block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="before_purchase" id="i-CIx.(Onm4?ihxzA}Y]" collapsed="true" x="-141" y="439">
+    <statement name="BEFOREPURCHASE_STACK">
+      <block type="controls_if" id="+s=hhGI/rZcbE%ju1/a%">
+        <mutation elseif="1" else="1"></mutation>
+        <value name="IF0">
+          <block type="procedures_callreturn" id="+6P[NXn~vHL{.~cwDu5t">
+            <mutation name="[fxl] CROSS-UP"></mutation>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="purchase" id="W6q#Z-I3q3d[d3-`S[dS">
+            <field name="PURCHASE_LIST">CALL</field>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="procedures_callreturn" id="]iFP+!yJ0nFt9%HgK,`t">
+            <mutation name="[fxl] CROSS-DOWN"></mutation>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="purchase" id="XO1PBi`QD9$78wNbo*CI">
+            <field name="PURCHASE_LIST">PUT</field>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="notify" id="iJ%TlqJDZv{(`eHC=V7W">
+            <field name="NOTIFICATION_TYPE">success</field>
+            <field name="NOTIFICATION_SOUND">silent</field>
+            <value name="MESSAGE">
+              <shadow type="text" id="}1(;fWHY_l^nM}[zYhL_">
+                <field name="TEXT">Waiting Signal</field>
+              </shadow>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="tick_analysis" id="S%Nun~$OfSIpvu}h4uM;" x="487" y="439">
+    <statement name="TICKANALYSIS_STACK">
+      <block type="procedures_callnoreturn" id="C80Z^~fCXx3T^D)R9Lu(">
+        <mutation name="(5)FRUITFELLA's CROSS-Lines">
+          <arg name="[fxl] Input Line 1"></arg>
+          <arg name="[fxl] Input Line 2"></arg>
+        </mutation>
+        <value name="ARG0">
+          <block type="smaa" id="NY)b*27uidcZl9.QN%EP">
+            <value name="INPUT">
+              <block type="ticks" id="hQic~G5ZKNPgroDYx`zW"></block>
+            </value>
+            <value name="PERIOD">
+              <shadow type="math_number" id="@H~8hx(f}efgM8=LqfR[">
+                <field name="NUM">5</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <value name="ARG1">
+          <block type="emaa" id="o.Z#!93v[h3Z$PwIO}.p">
+            <value name="INPUT">
+              <block type="ticks" id="]q2#IHL9hUc^{*^6XjO2"></block>
+            </value>
+            <value name="PERIOD">
+              <shadow type="math_number" id="HGAlX.oit5oj^apB`[*6">
+                <field name="NUM">6</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
